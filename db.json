@@ -1,0 +1,12 @@
+{
+    "Shows": [
+        
+        {"title":"title1",
+        "smallPoster":"posterLink",
+        "bigPoster": "posterLinkL",
+        "rentalPrice": "rprice",
+        "purchasePrice": "pprice",
+        "desc": "desc"}
+
+    ]
+}
