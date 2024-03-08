@@ -10,8 +10,13 @@ const ShowsDesc = () => {
     console.log(show);
 
     return (
+        <>
+        
         <div className="bg-blue-200 float-left w-full flex justify-center">
-            <div className="w-[65%]">
+            <div className="z-10 opacity-20 ">
+                <img className="object-none object-left h-[730px] w-[730px] absolute right-0" key={show.id} src={show.poster} alt={show.title} />
+            </div>
+            <div className="w-[65%] z-20">
                 <div className="grid grid-cols-2 place-items-center">
 
                     <div>
@@ -44,6 +49,8 @@ const ShowsDesc = () => {
             </div>
             </div>
         </div>
+            
+        </>
     );
 };
  
