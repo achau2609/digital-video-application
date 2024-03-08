@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { 
     slideshow1,
     slideshow2,
-    slideshow3,
-    slideshow4
+    slideshow3
 } from "../images";
  
 const Hero = () => {
 
-    const slides = [slideshow1, slideshow2, slideshow3, slideshow4];
+    const slides = [slideshow1, slideshow2, slideshow3 ];
 
     const [slide, setSlide] = useState(0);
 
