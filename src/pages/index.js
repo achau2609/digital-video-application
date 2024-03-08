@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import Hero from "../components/HeroSection";
 import FtMovieBanner from "../components/FeaturedMovies";
 import FtTvBanner from "../components/FeaturedTV";
-import { staticbanner1, staticbanner2 } from "../images";
+import { servicebanner } from "../images";
+import ShowsContext from "../context/ShowsContext";
 
  
 const Homepage = () => {
+
+    const shows = useContext(ShowsContext).shows;
+    const movies = shows.filter((e) => e.category === "movie");
+    const tv = shows.filter((e) => e.category === "tv");
+
     return (
-        <div>
+        <div className="bg-blue-200 float-left w-full">
             <Hero />
 
-            <FtMovieBanner />        
-            <FtTvBanner />
+            <FtMovieBanner shows={movies} />        
+            <FtTvBanner shows={tv} />
 
             <div>
-                <img src={staticbanner1} alt="Banner 1" />
-            </div>
-            <div>
-                <img src={staticbanner2} alt="Banner 2" />
+                <img src={servicebanner} alt="Banner 1" />
             </div>
 
         </div>
