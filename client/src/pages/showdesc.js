@@ -1,13 +1,26 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ShowsContext from "../context/ShowsContext";
  
 const ShowsDesc = () => {
 
     const { showId } = useParams();
 
-    const show = useContext(ShowsContext).shows.filter((e) => e.id === Number(showId))[0];
-    console.log(show);
+    const [show, setShow] = useState([]);
+    //const show = shows.filter((e) => e.id == Number(showId))[0];
+
+    useEffect(() => {
+        fetch(`http://ec2-52-14-130-177.us-east-2.compute.amazonaws.com:5000/showslist/${showId}`, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then((data) => {
+            if(data.body) {
+                setShow(data.body[0])
+            } 
+            else setShow()
+        });
+
+    }, [])
 
     return (
         <>
