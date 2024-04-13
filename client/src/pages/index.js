@@ -12,7 +12,7 @@ const Homepage = () => {
 
     useEffect(() => {
 
-        fetch('http://ec2-52-14-130-177.us-east-2.compute.amazonaws.com:5000/showslist/featuredmovies', {
+        fetch('http://18.225.235.13:5000/showslist/featuredmovies', {
             method: 'GET'
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ const Homepage = () => {
             else setFtMovies([])
         });
         
-        fetch('http://ec2-52-14-130-177.us-east-2.compute.amazonaws.com:5000/showslist/featuredtv', {
+        fetch('http://18.225.235.13:5000/showslist/featuredtv', {
             method: 'GET'
         })
             .then(res => res.json())

@@ -5,7 +5,7 @@ const ShowsList = () => {
 
     const [shows, setShows] = useState([]);
     useEffect(() => {
-        fetch('http://ec2-52-14-130-177.us-east-2.compute.amazonaws.com:5000/showslist', {
+        fetch('http://18.225.235.13:5000/showslist', {
             method: 'GET'
         })
         .then(res => res.json())
@@ -19,7 +19,7 @@ const ShowsList = () => {
     }, [])
 
     function updateResults(query) {
-        fetch(`http://ec2-52-14-130-177.us-east-2.compute.amazonaws.com:5000/showslist/search?q=${query}`, {
+        fetch(`http://18.225.235.13:5000/showslist/search?q=${query}`, {
             method: 'GET'
         })
         .then(res => res.json())

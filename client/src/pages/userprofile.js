@@ -12,7 +12,7 @@ const UserProfile = () => {
 
     useEffect(() => {
 
-        fetch(`http://ec2-52-14-130-177.us-east-2.compute.amazonaws.com:5000/user?username=${username}`, {
+        fetch(`http://18.225.235.13:5000/user?username=${username}`, {
             method: 'GET'
         })
         .then((res) => res.json())
